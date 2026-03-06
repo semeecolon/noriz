@@ -1,0 +1,21 @@
+{
+  "name": "noriz",
+  "main": "./.open-next/worker.js",
+  "site": {
+    "bucket": "./.open-next/static"
+  },
+  "env": {
+    "production": {
+      "routes": [
+        {
+          "pattern": "noriz.pages.dev",
+          "zone_name": "pages.dev"
+        }
+      ]
+    }
+  },
+  "compatibility_date": "2024-09-23",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}

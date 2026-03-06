@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"D:/02.Dev/2026/ttt\\\" && rm -rf .next .open-next && pnpm run build 2>&1 | head -100\",\"timeout\":120000,\"description\":\"클린 빌드 (캐시 제거 후)\"}",
+  "error": "Exit code 1\nrm: cannot remove '.next': Directory not empty\n\nrm: cannot remove '.next': Directory not empty",
+  "timestamp": "2026-03-06T06:47:37.311Z",
+  "retry_count": 1
+}
