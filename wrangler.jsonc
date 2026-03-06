@@ -2,19 +2,26 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": "./.open-next/worker.js",
   "name": "noriz",
-  "site": {
-    "bucket": "./.open-next/static"
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
   },
-  "env": {
-    "production": {
-      "routes": [
-        {
-          "pattern": "noriz.pages.dev",
-          "zone_name": "pages.dev"
-        }
-      ]
-    }
+  "images": {
+    // Enable image optimization
+    // see https://opennext.js.org/cloudflare/howtos/image
+    "binding": "IMAGES",
+  },
+  "services": [
+    {
+      // Self-reference service binding, the service name must match the worker name
+      // see https://opennext.js.org/cloudflare/caching
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "noriz",
+    },
+  ],
+  "observability": {
+    "enabled": true,
   },
   "compatibility_date": "2025-05-05",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"]
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
 }
